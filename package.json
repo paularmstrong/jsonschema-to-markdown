@@ -1,0 +1,44 @@
+{
+  "name": "jsonschema-to-markdown",
+  "version": "0.0.0",
+  "description": "JSON Schema to Markdown generator",
+  "main": "dist/index.js",
+  "bin": "dist/bin.js",
+  "author": "<paul@spaceyak.com>",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "rm -rf ./dist",
+    "build": "babel src -d ./dist --ignore 'src/**/__tests__/*','src/**/__fixtures__/*'",
+    "test": "jest",
+    "lint": "yarn lint:cmd --fix",
+    "lint:cmd": "eslint ."
+  },
+  "dependencies": {
+    "@apidevtools/json-schema-ref-parser": "^9.0.7",
+    "ajv": "^7.1.1",
+    "github-slugger": "^1.3.0",
+    "js-yaml": "^4.0.0",
+    "json-schema-traverse": "^1.0.0",
+    "mdast-builder": "^1.1.1",
+    "remark-gfm": "^1.0.0",
+    "remark-parse": "^9.0.0",
+    "remark-stringify": "^9.0.1",
+    "unified": "^9.2.1",
+    "unist-util-inspect": "^6.0.1",
+    "yargs": "^16.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.8",
+    "@babel/eslint-parser": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "eslint": "^7.21.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-jest": "^24.1.5",
+    "eslint-plugin-json": "^2.1.2",
+    "eslint-plugin-markdown": "^2.0.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1"
+  }
+}
