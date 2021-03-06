@@ -9,6 +9,7 @@
   "scripts": {
     "prebuild": "rm -rf ./dist",
     "build": "babel src -d ./dist --ignore 'src/**/__tests__/*','src/**/__fixtures__/*'",
+    "postbuild": "echo '#!/usr/bin/env node\n' $(cat dist/bin.js) > dist/bin.js",
     "test": "jest",
     "lint": "yarn lint:cmd --fix",
     "lint:cmd": "eslint ."
