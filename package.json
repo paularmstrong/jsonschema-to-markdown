@@ -1,15 +1,19 @@
 {
-  "name": "jsonschema-to-markdown",
+  "name": "@paularmstrong/jsonschema-to-markdown",
   "version": "0.0.0",
   "description": "JSON Schema to Markdown generator",
   "main": "dist/index.js",
-  "bin": "dist/bin.js",
-  "author": "<paul@spaceyak.com>",
+  "module": "src",
+  "bin": {
+    "jsonschema-to-markdown": "dist/bin.js"
+  },
+  "author": "Paul Armstrong <paul@spaceyak.com>",
   "license": "MIT",
   "scripts": {
     "prebuild": "rm -rf ./dist",
     "build": "babel src -d ./dist --ignore 'src/**/__tests__/*','src/**/__fixtures__/*'",
     "postbuild": "echo '#!/usr/bin/env node\n' $(cat dist/bin.js) > dist/bin.js",
+    "prepublish": "yarn build",
     "test": "jest",
     "lint": "yarn lint:cmd --fix",
     "lint:cmd": "eslint ."
@@ -41,5 +45,17 @@
     "eslint-plugin-prettier": "^3.3.1",
     "jest": "^26.6.3",
     "prettier": "^2.2.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paularmstrong/jsonschema-to-markdown.git"
+  },
+  "keywords": [
+    "jsonschema",
+    "markdown"
+  ],
+  "bugs": {
+    "url": "https://github.com/paularmstrong/jsonschema-to-markdown/issues"
+  },
+  "homepage": "https://github.com/paularmstrong/jsonschema-to-markdown#readme"
 }
